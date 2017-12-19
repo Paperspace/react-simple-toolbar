@@ -8,29 +8,29 @@
     "lib": "./node_modules/.bin/gulp",
     "build-style": "./node_modules/.bin/webpack --progress --colors --config build-style.config.js",
     "dist": "./node_modules/.bin/webpack --progress --colors --config dist.config.js",
-    "dist.min": "./node_modules/.bin/webpack --progress --colors --optimize-minimize --optimize-occurence-order --optimize-dedupe --config dist.min.config.js",
+    "dist.min": "./node_modules/.bin/webpack --progress --colors -p --config dist.min.config.js",
     "build": "npm run lib && npm run dist && npm run dist.min",
     "serve": "./node_modules/.bin/http-server -p 9091",
     "dev": "./node_modules/.bin/webpack-dev-server --progress --colors --port 9090 --content-base http://localhost:9091",
     "bundle": "./node_modules/.bin/webpack --progress --colors --config bundle.config.js"
   },
   "devDependencies": {
-    "css-loader": "^0.9.0",
-    "extract-text-webpack-plugin": "^0.3.5",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^3.8.11",
     "gulp-react": "^3.0.1",
-    "http-server": "^0.7.3",
-    "jsx-loader": "^0.12.2",
-    "style-loader": "^0.8.2",
-    "stylus-loader": "^0.4.0",
-    "webpack": "^1.4.13",
-    "webpack-dev-server": "^1.6.6"
+    "http-server": "^0.10.0",
+    "jsx-loader": "^0.13.2",
+    "style-loader": "^0.19.1",
+    "stylus-loader": "^3.0.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   },
   "peerDependencies": {
-    "react": ">=0.12.0"
+    "react": "^16.2.0"
   },
   "dependencies": {
-    "object-assign": "^2.0.0",
+    "object-assign": "^4.1.1",
     "react-clonewithprops": "^1.0.1",
     "react-style-normalizer": "^1.2.6"
   },
