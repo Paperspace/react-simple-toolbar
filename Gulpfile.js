@@ -1,10 +1,10 @@
 var gulp  = require('gulp');
-var react = require('gulp-react');
+var babel = require('gulp-babel');
 
 gulp.task('default', function () {
     return gulp.src('./src/**')
-        .pipe(react({
-            harmony: true
+        .pipe(babel({
+            presets: ['babel-preset-es2015', 'babel-preset-react', 'babel-preset-stage-0'].map(require.resolve),
         }))
         .pipe(gulp.dest('./lib'));
 });

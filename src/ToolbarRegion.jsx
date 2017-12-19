@@ -23,11 +23,11 @@ var TEXT_ALIGN = {
 	end  :'right'
 }
 
-module.exports = React.createClass({
+class ToolbarRegion extends React.Component {
 
-	displayName: DISPLAY_NAME,
+	displayName: DISPLAY_NAME
 
-	getDefaultProps: function(){
+	getDefaultProps () {
 		return {
 			'data-display-name': DISPLAY_NAME,
 
@@ -61,27 +61,27 @@ module.exports = React.createClass({
 			defaultVerticalStyle: {
 				// display : 'flex',
 				flexFlow: 'column'
-			}
+			},
 		}
-	},
+	}
 
-	render: function(){
+	render (){
 		var props = this.prepareProps(this.props)
 
 		return <div {...props} />
-	},
+	}
 
 
-	prepareProps: function(thisProps) {
+	prepareProps (thisProps) {
 		var props = assign({}, thisProps)
 
 		props.vertical = props.orientation == 'vertical'
 		props.style    = this.prepareStyle(props)
 
 		return props
-	},
+	}
 
-	prepareStyle: function(props) {
+	prepareStyle (props) {
 		var alignStyle = {
 			justifyContent: JUSTIFY_MAP[props.align] || 'center',
 			textAlign     : TEXT_ALIGN[props.align] || 'center'
@@ -119,4 +119,6 @@ module.exports = React.createClass({
 
 		return normalize(style)
 	}
-})
+}
+
+export default ToolbarRegion

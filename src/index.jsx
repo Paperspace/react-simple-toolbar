@@ -34,11 +34,11 @@ var THEMES = {
 	}
 }
 
-var Toolbar = React.createClass({
+class Toolbar extends React.Component {
 
-	displayName: DISPLAY_NAME,
+	displayName: DISPLAY_NAME
 
-	getDefaultProps: function() {
+	getDefaultProps () {
 		return {
 			'data-display-name': DISPLAY_NAME,
 			isReactToolbar: true,
@@ -68,15 +68,15 @@ var Toolbar = React.createClass({
 				flexFlow    : 'column',
 				alignItems  : 'stretch',
 				alignContent: 'center'
-			}
+			},
 		}
-	},
+	}
 
-	getInitialState: function(){
+	getInitialState (){
 		return {}
-	},
+	}
 
-	render: function(){
+	render (){
 
 		var state = this.state
 		var props = this.prepareProps(this.props, state)
@@ -84,9 +84,9 @@ var Toolbar = React.createClass({
 		// this.prepareContent(props)
 
 		return <div {...props} />
-	},
+	}
 
-	prepareContent: function(props){
+	prepareContent (props){
 
 		// var style = {
 		// 	display : 'inline-flex',
@@ -97,9 +97,9 @@ var Toolbar = React.createClass({
 		// }
 
 		// props.style.padding = 0
-	},
+	}
 
-	prepareProps: function(thisProps, state) {
+	prepareProps (thisProps, state) {
 		var props = assign({}, thisProps)
 
 		props.vertical = props.orientation == 'vertical'
@@ -107,9 +107,9 @@ var Toolbar = React.createClass({
 		props.children = this.prepareChildren(props, state)
 
 		return props
-	},
+	}
 
-	prepareStyle: function(props, state) {
+	prepareStyle (props, state) {
 
 		var defaultOrientationStyle = props.defaultHorizontalStyle
 		var orientationStyle = props.horizontalStyle
@@ -126,9 +126,9 @@ var Toolbar = React.createClass({
 		var style = assign({}, props.defaultStyle, defaultOrientationStyle, themeStyle, props.style, orientationStyle)
 
 		return normalize(style)
-	},
+	}
 
-	prepareChildren: function(props) {
+	prepareChildren (props) {
 
 		var regionCount = 0
 
@@ -162,9 +162,9 @@ var Toolbar = React.createClass({
 		}
 
 		return children
-	},
+	}
 
-	prepareRegion: function(region, index, regions) {
+	prepareRegion (region, index, regions) {
 		index   = index   || 0
 		regions = regions || []
 
@@ -184,9 +184,9 @@ var Toolbar = React.createClass({
 			align: align
 		})
 	}
-})
+}
 
 Toolbar.Region = require('./ToolbarRegion')
 Toolbar.themes = THEMES
 
-module.exports = Toolbar
+export default Toolbar

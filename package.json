@@ -15,12 +15,13 @@
     "bundle": "./node_modules/.bin/webpack --progress --colors --config bundle.config.js"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "gulp": "^3.8.11",
-    "gulp-react": "^3.0.1",
+    "gulp-babel": "^7.0.0",
     "http-server": "^0.10.0",
-    "jsx-loader": "^0.13.2",
     "style-loader": "^0.19.1",
     "stylus-loader": "^3.0.1",
     "webpack": "^3.10.0",
@@ -30,6 +31,10 @@
     "react": "^16.2.0"
   },
   "dependencies": {
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "object-assign": "^4.1.1",
     "react-clonewithprops": "^1.0.1",
     "react-style-normalizer": "^1.2.6"
